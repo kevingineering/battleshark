@@ -17,5 +17,6 @@ var io = socket_io_1.default(server);
 var roomIo = io.of('/room');
 require('./socketMethods')(io, roomIo);
 //configure and listen on port
-var PORT = process.env.port || 5000;
-server.listen(PORT, function () { return console.log("Listening on port " + PORT); });
+var port = process.env.PORT || 5000;
+console.log(process.env.PORT);
+server.listen(port, function () { return console.log("Listening on port " + port); });
