@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/lobby.css" />
+    <script
+      src="https://kit.fontawesome.com/761a25d2de.js"
+      crossorigin="anonymous"
+    ></script>
+    <title>Battleshark!</title>
+  </head>
+  <body>
+    <div class="title center">
+      <img src="images/battleshark.png" alt="Battleshark" />
+    </div>
+    <div class="grid-2 center">
+      <!--welcome, join or create room, and button-->
+      <div class="hello">
+        <h1 class="welcome">Welcome</h1>
+        <h2 class="welcome">Create or join a room to play!</h2>
+        <button class="btn" id="open-create-modal">Create Room</button>
+      </div>
+      <!--room list-->
+      <div class="rooms">
+        <ul class="collection">
+          <li class="collection-header"><h2>Open Rooms</h2></li>
+          <form autocomplete="off">
+            <input
+              id="search-room"
+              class="searchbar"
+              type="text"
+              placeholder="Search Rooms"
+            />
+          </form>
+          <div class="scroll" id="room-list"></div>
+        </ul>
+      </div>
+    </div>
+    <!--create room modal-->
+    <div class="modal-container" id="create-modal">
+      <div class="modal-content center">
+        <button id="close" class="close-btn">
+          <i class="fa fa-times"></i>
+        </button>
+        <h2 class="inverted">Create Your Own Room!</h2>
+        <!-- You must enter a room name. -->
+        <h3 class="inverted" id="modal-message"></h3>
+        <input
+          autocomplete="off"
+          type="text"
+          class="input-inverted"
+          id="room-name"
+          placeholder="Enter a room name..."
+        />
+        <button class="btn btn-inverted" id="create-btn">Create Room</button>
+      </div>
+    </div>
+    <!--join room modal-->
+    <div class="modal-container" id="join-modal">
+      <div class="modal-content center">
+        <button id="close" class="close-btn">
+          <i class="fa fa-times"></i>
+        </button>
+        <h2 class="inverted">*Room Name*</h2>
+        <!-- Password is incorrect. -->
+        <h3 class="inverted" id="modal-message"></h3>
+          <input
+            autocomplete="off"
+            type="text"
+            class="input-inverted"
+            id="room-password"
+            placeholder="Enter the room password"
+            />
+          <button class="btn btn-inverted">Join Room</button>
+        </form>
+      </div>
+    </div>
+    <!--Socket.io front end library-->
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="js/lobby.js"></script>
+  </body>
+</html>

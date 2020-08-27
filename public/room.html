@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/room.css" />
+    <title>Battleshark!</title>
+  </head>
+  <body>
+    <button class="btn leave-btn" id="leave-btn">&#8678; Leave Room</button>
+    <!-- Game area -->
+    <div class="title center">
+      <img src="images/battleshark.png" alt="Battleshark" name="shark5"/>
+    </div>
+    <div class="grid-1-2 center">
+      <!-- Shark tank / chat -->
+      <div class="tank-chat-container">
+        <h2 class="collection-header tank-header">
+          <button class="tank-chat-header" id="tank-header-btn">Tank</button> /
+          <button class="tank-chat-header" id="chat-header-btn">Chat</button>
+          <span class="chat-notification" id="chat-notification">!</span>
+        </h2>
+        <div class="shark-container center unhide" id="shark-container">
+          <div class="shark-tank" id="shark5tank">
+            <img
+              src="images/shark.jpg"
+              class="shark-img"
+              alt="shark"
+              id="shark5"
+            />
+          </div>
+          <div class="shark-tank" id="shark4tank">
+            <img
+              src="images/shark.jpg"
+              class="shark-img"
+              alt="shark"
+              id="shark4"
+            />
+          </div>
+          <div class="shark-tank" id="shark3atank">
+            <img
+              src="images/shark.jpg"
+              class="shark-img"
+              alt="shark"
+              id="shark3a"
+            />
+          </div>
+          <div class="shark-tank" id="shark3btank">
+            <img
+              src="images/shark.jpg"
+              class="shark-img"
+              alt="shark"
+              id="shark3b"
+            />
+          </div>
+          <div class="shark-tank" id="shark2tank">
+            <img
+              src="images/shark.jpg"
+              class="shark-img"
+              alt="shark"
+              id="shark2"
+            />
+          </div>
+        </div>
+        <div class="chat-container" id="chat-container">
+          <div class="chat-messages" id="chat-messages"></div>
+          <textarea class="chat-entry" id="chat-entry" placeholder="Send a message"></textarea>
+          <button class="btn chat-send-btn" id="chat-send-btn">Send</button>
+        </div>
+      </div>
+      <!-- User board and messagin-->
+      <div class="board-container">
+        <h2 class="collection-header" id="board-user-name">You</h2>
+        <div class="game-board" id="user-board"></div>
+        <button class="btn lock-btn" id="user-lock-btn">Lock sharks</button>
+        <h2 class="game-over-message" id="game-over-message"></h2>
+        <button class="btn lock-btn" id="reset-btn">Reset board</button>
+        <h2 class="lock-text" id="user-lock">Sharks locked!</h2>
+      </div>
+      <!-- Opponent board -->
+      <div class="board-container">
+        <h2 class="collection-header" id="board-opponent-name">Waiting...</h2>
+        <div class="game-board faded" id="opponent-board"></div>
+        <h2 class="lock-text" id="opponent-lock">Sharks locked!</h2>
+        <h2 class="waiting-text" id="opponent-waiting">Placing sharks...</h2>
+      </div>
+    </div>
+    <!-- User name modal -->
+    <div class="modal-container unhide" id="user-name-modal">
+      <div class="modal-content center">
+        <h2 class="inverted">Name</h2>
+        <h3 class="inverted" id="modal-message"></h3>
+          <input
+            autocomplete="off"
+            type="text"
+            class="input-inverted"
+            id="user-name"
+            required
+            placeholder="Enter your name"/>
+          <button class="btn btn-inverted" id="name-btn">Begin!</button>
+        </form>
+      </div>
+    </div>
+    <!--Socket.io front end library-->
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="js/room/moveSharks.js"></script>
+    <script src="js/room/gameBoards.js"></script>
+    <script src="js/room/room.js"></script>
+  </body>
+</html>

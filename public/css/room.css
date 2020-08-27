@@ -1,0 +1,245 @@
+:root {
+  --large-text: 6vw;
+  --medium-text: 3vw;
+  --small-text: 2vw;
+  --smaller-text: 1.5vw;
+}
+
+.grid-1-2 {
+  display: grid;
+  grid-template-columns: 24vw 30vw 30vw;
+  column-gap: 4vw;
+}
+
+/*#region TANK/CHAT */
+.tank-header {
+  position: relative;
+}
+
+.tank-chat-header {
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
+  border: 0;
+  font-size: var(--medium-text);
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.chat-notification {
+  position: absolute;
+  top: 0.5vw;
+  right: 2.5vw;
+  display: inline-block;
+  background-color: var(--secondary-color);
+  border-radius: 50%;
+  font-size: var(--smaller-text);
+  height: 1.6vw;
+  width: 1.6vw;
+  display: none;
+}
+
+.shark-container,
+.chat-container {
+  border: 0.3vw solid var(--primary-color);
+  border-top: none;
+  text-align: center;
+  padding-top: 2vw;
+  display: none;
+  /* match height of gameboards - 30 + 0.2 border */
+  height: 30.2vw;
+}
+
+.shark-tank {
+  height: 3vw;
+  margin-bottom: 2vw;
+}
+
+.chat-container {
+  padding-top: 0;
+  border-bottom: none;
+  position: relative;
+}
+
+.chat-entry {
+  position: absolute;
+  bottom: 3vw;
+  height: 6vw;
+  width: 100%;
+  border: 0;
+  border-top: 0.3vw solid var(--primary-color);
+  font-size: var(--smaller-text);
+  resize: none;
+  padding: 0.8vw;
+}
+
+.chat-messages {
+  text-align: left;
+  padding: 1vw;
+  font-size: 1.5vw;
+  height: 21.2vw;
+  overflow-wrap: break-word;
+  overflow-y: auto;
+}
+
+.chat-messages > div {
+  padding-bottom: 0.3vw;
+}
+
+.chat-bot-italic {
+  font-style: italic;
+}
+
+.chat-bot-style {
+  color: dodgerblue;
+}
+
+.chat-user-style {
+  color: limegreen;
+  font-weight: bolder;
+}
+
+.chat-opp-style {
+  color: red;
+  font-weight: bolder;
+}
+
+.chat-bold {
+  font-weight: bolder;
+}
+
+.chat-send-btn {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 3vw;
+  width: 100%;
+  border-radius: 0;
+  font-size: var(--smaller-text);
+  padding: 0;
+}
+
+.chat-send-btn:active {
+  transform: none;
+}
+
+/* .stats {
+  border: 0.3vw solid var(--primary-color);
+  border-top: none;
+} */
+
+/*#endregion*/
+
+/*#region SHARKS  */
+
+.shark-img {
+  height: 2.8vw;
+  display: block;
+  margin: 0 auto;
+  padding: 0 0;
+  cursor: pointer;
+}
+
+.shark-img.disabled {
+  cursor: default;
+}
+
+#shark5 {
+  width: 14.6vw;
+}
+#shark4 {
+  width: 11.6vw;
+}
+#shark3a {
+  width: 8.6vw;
+}
+#shark3b {
+  width: 8.6vw;
+}
+#shark2 {
+  width: 5.6vw;
+}
+
+.rotated {
+  transform: rotate(90deg);
+}
+
+/*#endregion*/
+
+/*#region GAMEBOARDS */
+
+.game-board {
+  border: 0.2vw solid var(--primary-color);
+  border-top: none;
+  font-size: 0; /* Font size of 0 removes weird spacing between buttons */
+}
+
+.board-container {
+  position: relative;
+}
+
+.board-row {
+  display: grid;
+  grid-template-columns: repeat(10, minmax(0, 1fr));
+}
+
+.board-unit {
+  /* width: 2.98vw; */
+  position: relative;
+  overflow: unset;
+  height: 3vw;
+  display: inline-block;
+  border: 0.1vw solid var(--primary-color);
+  justify-content: center;
+  background-color: black;
+}
+
+.marker {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2000;
+  height: 2.8vw;
+  width: 2.8vw;
+}
+
+.lock-btn {
+  margin-top: 1.5vw;
+  width: 100%;
+  font-size: 2.4vw;
+  display: none;
+}
+
+.lock-text,
+.waiting-text {
+  position: absolute;
+  left: 0vw;
+  top: 17.5vw;
+  transform: rotate(-45deg);
+  width: 30vw;
+  display: none;
+  font-size: 3.5vw;
+}
+
+.game-over-message {
+  margin-top: 1.5vw;
+}
+
+/*#endregion*/
+
+.leave-btn {
+  position: fixed;
+  top: 2vh;
+  left: 4vw;
+  width: 12vw;
+  font-size: var(--smaller-text);
+  padding: 0.5vw;
+  z-index: 2;
+}
+
+.unhide {
+  display: block;
+}
+
+.faded {
+  opacity: 0.3;
+}

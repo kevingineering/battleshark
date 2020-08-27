@@ -1,0 +1,233 @@
+/*#region General */
+:root {
+  --primary-color: #c0c0c0;
+  --secondary-color: #000000;
+  --secondary-color-with-opacity: #000000aa;
+  --tertiary-color: #ffffff;
+  --quaternary-color: #303030;
+  --danger-color: #ff0000;
+  --font-style: Arial, sans-serif;
+  --large-text: 6vh;
+  --medium-text: 3vh;
+  --small-text: 2vh;
+  --smaller-text: 1.5vh;
+}
+
+body {
+  background-color: var(--secondary-color);
+  font-family: var(--font-style);
+  margin: 0 4vw;
+  /* ensures always element below mouse - important when dragging and dropping*/
+  min-height: 100vh;
+}
+
+* {
+  color: var(--primary-color);
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+h1 {
+  font-size: var(--large-text);
+}
+
+h2 {
+  font-size: var(--medium-text);
+}
+
+h3 {
+  font-size: var(--small-text);
+}
+
+ul {
+  list-style: none;
+}
+
+.center {
+  text-align: center !important;
+}
+
+:focus {
+  outline: none;
+}
+
+/* Banner */
+.title img {
+  height: 8vh;
+  min-height: 6vw;
+  max-height: 10vw;
+  max-width: 60vw;
+  margin: 1.5vh auto 3vh auto;
+}
+
+/*#endregion*/
+
+/*#region Button */
+.btn {
+  color: var(--secondary-color);
+  background-color: var(--primary-color);
+  border: none;
+  font-size: 2.4vh;
+  font-weight: bold;
+  padding: 1vh 1vw;
+  border-radius: 0.5vw;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background-color: var(--tertiary-color);
+}
+
+.btn:active {
+  transform: scale(0.95);
+}
+
+.btn-inverted {
+  color: var(--primary-color);
+  background-color: var(--secondary-color);
+}
+
+.btn-inverted:active {
+  transform: scale(0.95);
+}
+
+.btn-inverted:hover {
+  background-color: var(--quaternary-color);
+}
+
+/*#endregion*/
+
+/*#region Collections */
+
+.collection {
+  margin: 0 auto;
+  max-width: 50vw;
+}
+
+.collection-header {
+  text-align: center;
+  background: var(--primary-color);
+  color: var(--secondary-color);
+  padding: 0.6vh 0;
+}
+
+.collection-header h2 {
+  margin: 0 auto;
+  color: var(--secondary-color);
+}
+
+.collection-item {
+  padding: 1vh 1vw;
+  border-top: 0.2vw solid var(--primary-color);
+  display: grid;
+}
+
+.collection-item h3 {
+  text-align: left;
+  font-weight: normal;
+}
+
+/*#endregion*/
+
+/*#region Inputs */
+
+input {
+  color: var(--primary-color);
+}
+
+input[type='text'],
+select,
+textarea {
+  font-family: var(--font-style);
+  display: block;
+  width: 100%;
+  padding: 0.8vh 0.8vw;
+  font-size: 2.4vh;
+  border: 0.2vw solid var(--primary-color);
+  background: var(--secondary-color);
+  color: var(--primary-color);
+}
+
+input[type='submit'],
+input[type='button'] {
+  font: inherit;
+  display: block;
+  width: 100%;
+  background: var(--primary-color);
+  color: var(--secondary-color);
+  padding: 0.8vh 2.6vw;
+  border: none;
+  cursor: pointer;
+}
+
+input[class='input-inverted'] {
+  color: var(--secondary-color);
+  background: var(--primary-color);
+  border: 0.2vw solid var(--secondary-color);
+}
+
+/*#endregion*/
+
+/*#region Modal*/
+
+.modal-container {
+  position: fixed; /* stay in place */
+  z-index: 1; /* sits on top */
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: var(--secondary-color-with-opacity);
+  width: 100%; /* full width */
+  height: 100%; /* full height */
+  display: none;
+}
+
+.modal-content {
+  position: relative;
+  background-color: var(--primary-color);
+  opacity: 1;
+  margin: 25vh auto;
+  padding: 2vh 2vw;
+  width: 40vw;
+}
+
+.modal-content > input {
+  margin-bottom: 3vh;
+}
+
+#modal-message {
+  height: 3vh;
+  text-align: center;
+  color: red;
+  margin-top: 1vh;
+}
+
+.inverted {
+  color: var(--secondary-color);
+  background-color: var(--primary-color);
+}
+
+.close-btn {
+  position: absolute;
+  right: 0.5vw;
+  top: 0.5vw;
+  background-color: var(--primary-color);
+  border: none;
+  font-size: var(--medium-text);
+}
+
+.close-btn > .fa {
+  color: var(--secondary-color);
+}
+
+.close:hover {
+  background-color: none;
+}
+
+.close-btn:active {
+  transform: scale(0.95);
+}
+
+/*#endregion*/
