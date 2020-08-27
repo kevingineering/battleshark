@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node ./tsc/server.js",
-    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install && node ./tsc/server.js"
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install"
   },
   "author": "kch",
   "license": "ISC",
