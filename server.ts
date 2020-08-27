@@ -17,5 +17,5 @@ const roomIo = io.of('/room');
 require('./socketMethods')(io, roomIo);
 
 //configure and listen on port
-const PORT = process.env.port || 5000;
-server.listen(PORT, () => console.log(`Listening on port ${PORT}`));
+const port = process.env.PORT || 5000;
+server.listen(port, () => console.log(`Listening on port ${port}`));
