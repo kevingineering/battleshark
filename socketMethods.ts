@@ -1,11 +1,11 @@
 //#region VARIABLES AND INTERFACES
 
 const rooms: IRoomDictionary = {
-  ['Great White']: { roomName: 'Great White' },
-  ['Hammerhead']: { roomName: 'Hammerhead' },
-  ['Basking']: { roomName: 'Basking' },
-  ['Tiger']: { roomName: 'Tiger' },
-  ['Baby']: { roomName: 'Baby' },
+  // ['Great White']: { roomName: 'Great White' },
+  // ['Hammerhead']: { roomName: 'Hammerhead' },
+  // ['Basking']: { roomName: 'Basking' },
+  // ['Tiger']: { roomName: 'Tiger' },
+  // ['Baby']: { roomName: 'Baby' },
 };
 
 const users: IUserDictionary = {};

@@ -1,13 +1,12 @@
 "use strict";
 //#region VARIABLES AND INTERFACES
-var _a;
-var rooms = (_a = {},
-    _a['Great White'] = { roomName: 'Great White' },
-    _a['Hammerhead'] = { roomName: 'Hammerhead' },
-    _a['Basking'] = { roomName: 'Basking' },
-    _a['Tiger'] = { roomName: 'Tiger' },
-    _a['Baby'] = { roomName: 'Baby' },
-    _a);
+var rooms = {
+// ['Great White']: { roomName: 'Great White' },
+// ['Hammerhead']: { roomName: 'Hammerhead' },
+// ['Basking']: { roomName: 'Basking' },
+// ['Tiger']: { roomName: 'Tiger' },
+// ['Baby']: { roomName: 'Baby' },
+};
 var users = {};
 //#endregion
 exports = module.exports = function (io, roomIo) {

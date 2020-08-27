@@ -211,6 +211,11 @@ socket.on('opponentName', (name) => {
 });
 
 socket.on('opponentLocked', () => {
+  if (resetButton.classList.contains('unhide')) {
+    resetBoard();
+    gameOverMessage.innerText = '';
+    resetButton.classList.remove('unhide');
+  }
   isOpponentLocked = true;
   if (isUserLocked) {
     gameStart();
