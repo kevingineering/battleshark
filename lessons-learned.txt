@@ -1,3 +1,0 @@
-Each page creates its own websocket connection - connection not maintained from index.html to room.html
-
-Can use websockets with different namespaces - '/' is default, here I am using '/room'

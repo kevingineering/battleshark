@@ -17,7 +17,6 @@ function addSharkEventListeners() {
 function removeSharkEventListeners() {
   const sharks = document.querySelectorAll('.shark-img');
   sharks.forEach((shark) => {
-    console.log(shark);
     shark.removeEventListener('mousedown', handleSharkClick, true);
     shark.classList.add('disabled');
   });
@@ -47,7 +46,6 @@ function getUserBoardArray() {
 
 //called by HTML - starts shark move - add event listeners for both single click and drag
 function handleSharkClick(event) {
-  console.log('sharkclick');
   let element = event.target;
   previousContainer = element.parentNode;
   document.addEventListener(
