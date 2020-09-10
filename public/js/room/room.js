@@ -227,20 +227,11 @@ socket.on('opponentLocked', () => {
 
 socket.on('opponentLeft', () => {
   cleanOpponentBoard();
-  // isUserLocked = false;
   isStarted && resetBoard();
   isStarted = false;
   opponentBoard.classList.add('faded');
   chatMessages.innerText = '';
   boardOpponentName.innerText = 'Waiting...';
-  // userBoard.classList.remove('faded');
-  // userLock.classList.remove('unhide');
-  // checkSharkTank();
-  // const sharks = document.querySelectorAll('.shark-img');
-  // sharks.forEach((shark) => {
-  //   shark.onmousedown = 'handleSharkClick(this, event)';
-  //   shark.classList.remove('disabled');
-  // });
 
   addToChat(`${opponentName} left the room`, botName, 0);
 });
@@ -284,7 +275,12 @@ socket.on('userLoses', () => {
 
 function endGame() {
   isStarted = false;
+  isUserTurn = false;
+  isUserLocked = false; //user has submitted board
+  isOpponentLocked = false; //opponent has submitted board
   resetButton.classList.add('unhide');
+  userBoard.classList.remove('faded');
+  opponentBoard.classList.remove('faded');
 }
 
 resetButton.addEventListener('click', () => {
@@ -304,10 +300,17 @@ function resetBoard() {
     e.parentNode.removeChild(e);
   });
 
+  //remove clicked class from elements
+  const clicked = document.getElementsByClassName('clicked');
+  while (clicked.length > 0) {
+    clicked[0].classList.remove('clicked');
+  }
+
   //boards as in beginning
   cleanUserBoard();
   cleanOpponentBoard();
   opponentBoard.classList.add('faded');
+  addSharkEventListeners();
 
   //reset variables
   isUserLocked = false;

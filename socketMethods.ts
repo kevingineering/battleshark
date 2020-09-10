@@ -211,11 +211,20 @@ const userGuess = (
     if (count === 17) {
       socket.emit('userWins');
       socket.to(roomName).emit('userLoses');
+      let opponent = getOpponent(socket.id, roomName)!;
+      cleanBoards(socket.id, opponent);
     }
   } else {
     socket.emit('userMiss', location);
     socket.to(roomName).emit('opponentMiss', location);
   }
+};
+
+const cleanBoards = (user: string, opponent: string) => {
+  users[user].board = undefined;
+  users[user].guessBoard = undefined;
+  users[opponent].guessBoard = undefined;
+  users[opponent].board = undefined;
 };
 
 //send to other user
@@ -240,8 +249,8 @@ const userDisconnect = (socket: SocketIO.Socket) => {
       socket.to(key).emit('opponentLeft');
       let opponent = getOpponent(socket.id, key);
       if (opponent) {
-        users[opponent].guessBoard = [];
-        users[opponent].board = [];
+        users[opponent].guessBoard = undefined;
+        users[opponent].board = undefined;
         if (rooms[key].user1Id === socket.id) {
           rooms[key].user1Id = undefined;
         } else {

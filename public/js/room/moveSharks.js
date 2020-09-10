@@ -285,7 +285,7 @@ function adjustLocationForEdgesAndVerifyAvailable(element, isRotation) {
   return true;
 }
 
-function removeElementFromBoard(element) {
+function removeElementFromBoardArray(element) {
   let label = element.id.slice(5);
   for (i = 0; i < 10; i++) {
     for (j = 0; j < 10; j++) {
@@ -300,7 +300,7 @@ function putElementInContainer(element, location) {
   location.appendChild(element);
 
   if (location.classList.contains('shark-tank')) {
-    removeElementFromBoard(element);
+    removeElementFromBoardArray(element);
     element.style = '';
     return;
   }
@@ -327,7 +327,6 @@ function putSharkInTank(id) {
   tank.appendChild(shark);
   shark.removeAttribute('style');
   shark.classList.remove('disabled', 'rotated');
-  shark.addEventListener('mousedown', (e) => handleSharkClick(e));
 }
 
 //see if all sharks out of tank (and presumable on board - modify in future)
@@ -353,7 +352,7 @@ const updateBoard = (element) => {
   let currRow = isVert ? row - offset : row;
   let currCol = isVert ? col : col - offset;
 
-  removeElementFromBoard(element);
+  removeElementFromBoardArray(element);
 
   if (isVert) {
     for (i = 0; i < width; i++) {
