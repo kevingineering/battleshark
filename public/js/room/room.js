@@ -185,8 +185,9 @@ function addToChat(message, sender, id) {
     (id === 1 && 'chat-user-style') ||
     'chat-opp-style';
   div.innerHTML = `<div><p ${
-    id === 0 && 'class=chat-bot-italic'
-  }><span class="${chatClass} chat-bold">${sender}: </span>${message}</p></div>`;
+    id === 0 ? 'class=chat-bot-italic' : ''
+  }><span class="${chatClass} chat-bold">${sender}: </span><span></span></p></div>`;
+  div.firstChild.firstChild.lastChild.innerText = message;
   chatMessages.appendChild(div);
   //scroll down
   chatMessages.scrollTop = chatMessages.scrollHeight;
